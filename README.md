@@ -33,4 +33,4 @@ Sistemin donanım bağlantıları aşağıdaki gibidir:
 > **⚠️ Güvenlik Uyarısı:** Biyolojik sinyal okumaları sırasında bilgisayarınızın şarj adaptörünün prize takılı olmamasına (sadece batarya ile çalışmasına) özen gösterin. Bu hem şebeke gürültüsünü engeller hem de elektriksel güvenliği (Galvanik izolasyon) sağlar.
 
 ## 📊 Örnek Çıktı
-`![EKG Dalgaları](docs/serial_plotter_result.png/ECG.21)
+`![EKG Dalgaları](docs/serial_plotter_result.png/ECG.21.jpeg)
