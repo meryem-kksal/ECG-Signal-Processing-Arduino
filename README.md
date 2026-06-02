@@ -34,3 +34,9 @@ The hardware connections of the system are as follows:
 
 ## 📊 Sample Output
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.21.jpeg)
+![ECG Waveforms](docs/serial_plotter_result.png/ECG12.jpeg)
+![ECG Waveforms](docs/serial_plotter_result.png/ECG.22.png)
+![ECG Waveforms](docs/serial_plotter_result.png/ECG.24.ecgmonitoswithbpm.png)
+![ECG Waveforms](docs/serial_plotter_result.png/ECG.23ecgmonitor.png)
+![ECG Waveforms](docs/serial_plotter_result.png/ECG.2pulsedatas2.png)
+
