@@ -35,13 +35,13 @@ The hardware connections of the system are as follows:
 
 ## 📊 Sample Output
 ![Electrodes were placed according to the diagram](docs/circuit_diagram.png/ECG-Electrodes-Placement.webp)
-![Canlı EKG Sinyali](/gifs/ecg11.gif)
+![Canlı EKG Sinyali](/gifs/ecg11.mp4)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.21.jpeg)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG12.jpeg)
-![Canlı EKG Sinyali](/gifs/ecg22.gif)
+![Canlı EKG Sinyali](/gifs/ecg22.mp4)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.22.png)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.24.ecgmonitoswithbpm.png)
-![Canlı EKG Sinyali](/gifs/ecg12.gif)
+![Canlı EKG Sinyali](/gifs/ecg12.mp4)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.23ecgmonitor.png)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.2pulsedatas2.png)
-![Canlı EKG Sinyali](/gifs/ecg21.gif)
+![Canlı EKG Sinyali](/gifs/ecg21.mp4)
