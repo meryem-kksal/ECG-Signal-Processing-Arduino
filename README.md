@@ -31,6 +31,8 @@ The hardware connections of the system are as follows:
 | **SDN** | Not Connected (or 3.3V) | Shutdown Mode (Active Low) |
 
 > **⚠️ Safety Warning:** Ensure that your computer's charging adapter is not plugged into the mains (run only on battery) during biological signal readings. This prevents mains noise and ensures electrical safety (Galvanic isolation).
+> Electrodes were placed according to the diagram
+> (docs/circuit_diagram.png/electrodesplaces.png)
 
 ## 📊 Sample Output
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.21.jpeg)
