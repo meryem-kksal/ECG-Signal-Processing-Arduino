@@ -34,7 +34,7 @@ The hardware connections of the system are as follows:
 
 
 ## 📊 Sample Output
-![Electrodes were placed according to the diagram](docs/circuit_diagram.png/electrodesplaces.png)
+![Electrodes were placed according to the diagram](docs/circuit_diagram.png/ECG-Electrodes-Placement.webp)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.21.jpeg)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG12.jpeg)
 ![ECG Waveforms](docs/serial_plotter_result.png/ECG.22.png)
