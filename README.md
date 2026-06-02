@@ -1,36 +1,36 @@
 # ECG-Signal-Processing-Arduino
-# Gerçek Zamanlı EKG Sinyal İşleme ve Nabız (BPM) Ölçüm Sistemi
+# Real-Time ECG Signal Processing and Heart Rate (BPM) Measurement System
 
-Bu proje, AD8232 Biyopotansiyel Sensörü ve Arduino kullanılarak insan vücudundan alınan analog EKG (Elektrokardiyografi) sinyallerinin donanımsal ve yazılımsal olarak filtrelenmesi, gürültüden arındırılması ve gerçek zamanlı nabız (BPM) hesabı yapılması amacıyla geliştirilmiş bir gömülü sistem uygulamasıdır.
+This project is an embedded system application developed to filter, denoise, and calculate the real-time heart rate (BPM) from analog ECG (Electrocardiography) signals acquired from the human body using an AD8232 Biopotential Sensor and Arduino, utilizing both hardware and software filtering techniques.
 
-## 🚀 Proje Özeti ve Mühendislik Yaklaşımı
+## 🚀 Project Overview and Engineering Approach
 
-Biyolojik sinyaller (mV seviyesinde) yüksek oranda şebeke gürültüsü (50Hz) ve kas (EMG) paraziti içerir. Bu projede:
-1. **Donanımsal Filtreleme:** AD8232 içindeki enstrümantasyon amplifikatörü (Op-Amp) ile sinyal yükseltilmiş ve CMRR (Ortak Mod Reddetme Oranı) ile ana gürültüler bastırılmıştır.
-2. **Yazılımsal Filtreleme (DSP):** ADC (Analog-Digital Converter) üzerinden okunan ham sinyal, **Dairesel Tampon (Circular Buffer)** algoritması kullanılarak "Hareketli Ortalama (Moving Average)" filtresinden geçirilmiş, anlık mikro sıçramalar ve ADC kararsızlıkları dijital olarak sönümlenmiştir.
-3. **BPM Algoritması:** Filtrelenmiş sinyal üzerinden R-Tepesi (R-Peak) tespiti yapılmış, ardışık iki tepe arasındaki süre (RR Interval) `millis()` fonksiyonu ile ölçülerek dakikadaki kalp atış hızı hesaplanmıştır. Çift tetiklemeyi (Double-triggering) önlemek için yazılımsal "Debounce" (refrakter periyot) süresi eklenmiştir.
+Biological signals (at the mV level) contain a high amount of mains noise (50Hz) and muscle (EMG) artifacts. In this project:
+1. **Hardware Filtering:** The signal was amplified using the instrumentation amplifier (Op-Amp) inside the AD8232, and main noise sources were suppressed via CMRR (Common Mode Rejection Ratio).
+2. **Software Filtering (DSP):** The raw signal read through the ADC (Analog-Digital Converter) was passed through a "Moving Average" filter using a **Circular Buffer** algorithm, digitally dampening instantaneous micro-spikes and ADC fluctuations.
+3. **BPM Algorithm:** R-Peak detection was performed on the filtered signal, and the time between two consecutive peaks (RR Interval) was measured using the `millis()` function to calculate the heart rate per minute. A software "Debounce" (refractory period) time was added to prevent double-triggering.
 
-## 📂 Klasör Yapısı (Repository Structure)
+## 📂 Repository Structure
 
-Bu repo, gelişmişlik düzeyine göre iki farklı kod dosyası içerir:
+This repository contains two different code files based on their complexity level:
 
-* **`src/01_Basic_ECG_Filter/`** : Sensörden gelen ham analog veriyi okuyan, pedlerin koptuğunu (Leads-off) denetleyen ve hareketli ortalama filtresi ile sinyali pürüzsüzleştiren temel kod. (Serial Plotter ile dalga izlemek için idealdir).
-* **`src/02_ECG_BPM_Calculator/`** : Filtrelenmiş sinyal üzerinden tepe noktalarını yakalayarak gerçek zamanlı BPM hesaplayan gelişmiş kod.
+* **`src/01_Basic_ECG_Filter/`** : The basic code that reads the raw analog data from the sensor, checks for disconnected pads (Leads-off detection), and smooths the signal with a moving average filter. (Ideal for observing waveforms via Serial Plotter).
+* **`src/02_ECG_BPM_Calculator/`** : The advanced code that calculates real-time BPM by capturing peak points from the filtered signal.
 
-## ⚙️ Donanım Kurulumu (Pinout)
+## ⚙️ Hardware Setup (Pinout)
 
-Sistemin donanım bağlantıları aşağıdaki gibidir:
+The hardware connections of the system are as follows:
 
-| AD8232 Pini | Arduino Pini | İşlev |
+| AD8232 Pin | Arduino Pin | Function |
 | :--- | :--- | :--- |
-| **GND** | GND | Toprak (Referans) |
-| **3.3V** | 3.3V | Güç Beslemesi *(DİKKAT: 5V KULLANILMAMALIDIR)* |
-| **OUTPUT** | A0 | Analog EKG Sinyal Çıkışı |
-| **LO-** | D12 | Ped Kopma Sensörü (Negatif) |
-| **LO+** | D13 | Ped Kopma Sensörü (Pozitif) |
-| **SDN** | Boş (veya 3.3V) | Uyku Modu (Aktif Düşük) |
+| **GND** | GND | Ground (Reference) |
+| **3.3V** | 3.3V | Power Supply *(WARNING: DO NOT USE 5V)* |
+| **OUTPUT** | A0 | Analog ECG Signal Output |
+| **LO-** | D12 | Leads-off Detect (Negative) |
+| **LO+** | D13 | Leads-off Detect (Positive) |
+| **SDN** | Not Connected (or 3.3V) | Shutdown Mode (Active Low) |
 
-> **⚠️ Güvenlik Uyarısı:** Biyolojik sinyal okumaları sırasında bilgisayarınızın şarj adaptörünün prize takılı olmamasına (sadece batarya ile çalışmasına) özen gösterin. Bu hem şebeke gürültüsünü engeller hem de elektriksel güvenliği (Galvanik izolasyon) sağlar.
+> **⚠️ Safety Warning:** Ensure that your computer's charging adapter is not plugged into the mains (run only on battery) during biological signal readings. This prevents mains noise and ensures electrical safety (Galvanic isolation).
 
-## 📊 Örnek Çıktı
-`![EKG Dalgaları](docs/serial_plotter_result.png/ECG.21.jpeg)
+## 📊 Sample Output
+![ECG Waveforms](docs/serial_plotter_result.png/ECG.21.jpeg)
