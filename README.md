@@ -33,6 +33,27 @@ The hardware connections of the system are as follows:
 > **⚠️ Safety Warning:** Ensure that your computer's charging adapter is not plugged into the mains (run only on battery) during biological signal readings. This prevents mains noise and ensures electrical safety (Galvanic isolation).
 
 
+## The Electrophysiology Behind the System: How We Read the Heart
+
+To accurately process the ECG signals using the AD8232 module and Arduino, it is crucial to understand the biological hardware we are interfacing with: the human heart and its electrical vectors.
+
+### 1. The Electrode Logic: Differential Amplification & Grounding
+Electrical current flows due to a potential difference. As the heart beats, it generates a 3D electrical vector, generally traveling from the top right of the chest toward the bottom left.
+
+* **RA (Right Arm / -) and LA (Left Arm or Leg / +):** By placing the negative electrode on the right side and the positive on the left, we configure the AD8232 to act as a highly sensitive biological voltmeter. As the depolarization wave travels from the negative pole to the positive pole, the sensor reads and amplifies this potential difference.
+* **RL (Right Leg / GND - The Green Cable):** The human body acts as a giant antenna, picking up 50Hz alternating current (AC) noise from surrounding wall outlets and electronic devices. The GND electrode provides a stable reference point to the AD8232, telling the system: *"This is the ambient noise of the body; filter it out."* Without this critical grounding, the raw signal would be completely buried under environmental interference.
+
+### 2. Anatomy of the Signal: The QRS Complex and Our Trigger Algorithm
+The heart's mechanical pumping is driven by electrical commands called **depolarization**—a rapid shift in cellular ionic charges. 
+
+* **The Atria (P Wave):** The natural pacemaker (SA Node) fires, causing the smaller upper chambers (atria) to contract. This generates a very small electrical spike.
+* **The AV Node Delay:** The electrical signal is intentionally delayed at the center of the heart to allow blood to fill the lower chambers. This creates the flat baseline (isoelectric line) seen in our graphs.
+* **The Ventricles (The Massive QRS Spike):** The ventricles are the massive, thick muscle chambers responsible for pumping blood to the entire body. When the electrical wave hits them, they depolarize simultaneously with immense force. 
+* **Software Integration:** This violent ventricular depolarization generates the highest voltage output in the entire cardiac cycle, which corresponds to the massive, sharp peak in our plotter (The QRS Complex). Because this spike is so distinct, our algorithm sets a high trigger threshold (`rawsignal > 600`) to specifically capture this exact moment of ventricular contraction, bypassing smaller waves (like P or T waves) and baseline wander.
+
+
+  
+
 ## 📊 Sample Output
 ![Electrodes were placed according to the diagram](docs/circuit_diagram.png/ECG-Electrodes-Placement.webp)
 
