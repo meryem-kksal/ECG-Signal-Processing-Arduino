@@ -1,0 +1,57 @@
+{
+  "coworkUserFilesPath": "C:\\Users\\M\\Claude",
+  "preferences": {
+    "launchPreviewPersistedWorkspaces": [],
+    "launchPreviewSessionScopedSessions": [],
+    "coworkScheduledTasksEnabled": false,
+    "coworkHipaaRestricted": false,
+    "ccdScheduledTasksEnabled": true,
+    "sidebarMode": "epitaxy",
+    "bypassPermissionsGateByAccount": {
+      "dbeadaa9-c7ec-44d3-b1d6-d7e1dbc11313": false,
+      "68cb98af-a40b-4297-b7b9-eaa94380a7cf": false
+    },
+    "coworkWebSearchEnabled": true,
+    "coworkModelAutoFallbackByAccount": {
+      "dbeadaa9-c7ec-44d3-b1d6-d7e1dbc11313": true,
+      "68cb98af-a40b-4297-b7b9-eaa94380a7cf": false
+    },
+    "remoteToolsDeviceName": "desktop-0in5go4",
+    "epitaxyPrefs": {
+      "ccd-sessions-filter": {
+        "state": {
+          "selectedProjects": []
+        },
+        "version": 0
+      },
+      "starred-local-code-sessions": [],
+      "starred-cowork-spaces": [],
+      "starred-session-groups": [],
+      "desktop-frame.paneStore.v1": {
+        "state": {
+          "extraPanesByMode": {},
+          "colWeightsByMode": {},
+          "rowSplit": 0.5,
+          "draftNonce": 0
+        },
+        "version": 4
+      },
+      "dframe-local-slice": {
+        "pinnedOrder": [],
+        "homeProjectsPinnedOrder": []
+      },
+      "epitaxy-perm-mode-acks.68cb98af-a40b-4297-b7b9-eaa94380a7cf": [
+        "C:\\Users\\M\\OneDrive\\Masaüstü\\matlabprojeleri:auto",
+        "C:\\Users\\M\\OneDrive\\Masaüstü\\cstprojeleri:auto"
+      ],
+      "epitaxy-folder-permission-mode.68cb98af-a40b-4297-b7b9-eaa94380a7cf": {
+        "C:\\Users\\M\\OneDrive\\Masaüstü\\matlabprojeleri": "auto",
+        "C:\\Users\\M\\OneDrive\\Masaüstü\\cstprojeleri": "auto"
+      },
+      "dframe-group-scopes": {},
+      "claude-code-preferred-editor": "vscode",
+      "epitaxy-transcript-links-in-preview": false,
+      "epitaxy-transcript-links-chooser-seen": true
+    }
+  }
+}
